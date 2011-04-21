@@ -1,0 +1,3 @@
+[ciruclar]
+bar=%(foo)s
+foo=%(bar)s

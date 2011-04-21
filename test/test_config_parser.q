@@ -7,7 +7,14 @@
     cfg["first";"bar"] mustmatch "banana/grape";
     cfg["first";"bat"] mustmatch "banana";
     cfg["first";"qux"] mustmatch "orange";
+    cfg["first";"uxx"] mustmatch "banana/orange";
+    cfg["first";"uzz"] mustmatch "banana/grape/orange/banana";
     };
+  should["raise an error for circular dependency"]{
+    mustthrow["Circular dependency for circular1"]{
+      .utl.parseConfig configFile `circularDepedency;
+      };
+  };
   should["fill missing values from a DEFAULT section if available"]{
     cfg: .utl.parseConfig configFile `default;
     cfg["foo";"baz"] mustmatch string 4;

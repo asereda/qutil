@@ -2,6 +2,8 @@
 bar:%(baz)s/grape
 baz:banana
 bak:orange
+uxx:%(baz)s/%(bak)s
+uzz:%(bar)s/%(bak)s/%(baz)s
 [DEFAULT]
 bat:%(baz)s
 baz:apple
